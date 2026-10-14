@@ -544,8 +544,8 @@ section {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation:
-    heroFadeUp 1.5s var(--ease) 0.35s forwards,
-    shimmerText 3.2s linear 1.2s infinite;
+    heroFadeUp 1.2s var(--ease) 0.35s forwards,
+    shimmerText 5s linear 1.2s infinite;
   opacity: 0;
   filter: drop-shadow(0 2px 14px rgba(201, 164, 92, 0.45));
 }
@@ -2034,7 +2034,7 @@ section {
 .banner-content .eyebrow-shimmer,
 .banner-eyebrow {
   opacity: 1;
-  animation: shimmerText 3.2s linear infinite;
+  animation: shimmerText 5s linear infinite;
 }
 
 .banner-quote {
@@ -2207,10 +2207,61 @@ section {
 }
 
 /* ============================================================
-   TESTIMONIALS
+   TESTIMONIALS (Stories from the Land)
    ============================================================ */
 .testimonials-section {
-  background: var(--warm-white);
+  /* Blur control matching Get the App */
+  --testimonials-bg-blur: 0px;
+
+  position: relative;
+  text-align: center;
+  padding: 130px var(--container-px) 100px;
+  overflow: hidden;
+  background-color: var(--dark-section);
+}
+
+.testimonials-bg {
+  position: absolute;
+  inset: -24px;
+  background-image: url("../images/land.png");
+  background-size: cover;
+  background-position: center;
+  filter: blur(var(--testimonials-bg-blur));
+  -webkit-filter: blur(var(--testimonials-bg-blur));
+  transform: scale(1.08);
+  z-index: 1;
+}
+
+.testimonials-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(22, 18, 14, 0.85) 0%,
+    rgba(22, 18, 14, 0.85) 100%
+  );
+  z-index: 2;
+}
+
+.testimonials-section .container {
+  position: relative;
+  z-index: 3;
+}
+
+.testimonials-section .section-header {
+  margin-inline: auto;
+  margin-bottom: 50px;
+}
+
+.testimonials-section .section-header h2 {
+  color: #fff;
+  margin-bottom: 18px;
+}
+
+.testimonials-section .section-header p {
+  color: var(--sandstone);
+  font-size: 1.15rem;
+  margin-bottom: 24px;
 }
 
 .testimonials-track {
@@ -2218,9 +2269,16 @@ section {
   margin-inline: auto;
   position: relative;
 }
+
 .testimonial {
   display: none;
-  background: var(--papyrus);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.35),
+    0 0 24px rgba(201, 164, 92, 0.1);
   border-radius: var(--radius-xl);
   padding: 56px 52px;
   position: relative;
@@ -2238,40 +2296,45 @@ section {
   font-family: Georgia, serif;
   font-size: 100px;
   line-height: 1;
-  color: rgba(201, 164, 92, 0.18);
+  color: rgba(201, 164, 92, 0.25);
   pointer-events: none;
   user-select: none;
 }
+
 .testimonial-text {
   font-family: var(--font-display);
   font-style: italic;
   font-size: clamp(1.1rem, 2vw, 1.35rem);
-  color: var(--text-secondary);
+  color: #ffffff;
   line-height: 1.8;
   margin-bottom: 32px;
   position: relative;
   z-index: 1;
 }
+
 .testimonial-author {
   font-weight: 700;
   font-size: 1.05rem;
+  color: var(--gold-light);
   margin-bottom: 4px;
 }
+
 .testimonial-role {
-  color: var(--text-muted);
+  color: var(--sandstone);
   font-size: 0.88rem;
 }
 
-.t-dots {
+.testimonials-section .t-dots {
   display: flex;
   gap: 10px;
   justify-content: center;
   margin-top: 36px;
 }
-.t-dot {
+
+.testimonials-section .t-dot {
   width: 10px;
   height: 10px;
-  background: rgba(23, 43, 58, 0.2);
+  background: rgba(255, 255, 255, 0.25);
   border-radius: 99px;
   cursor: pointer;
   border: none;
@@ -2279,7 +2342,8 @@ section {
     background 0.3s,
     width 0.35s var(--ease);
 }
-.t-dot.active {
+
+.testimonials-section .t-dot.active {
   background: var(--gold);
   width: 34px;
 }
