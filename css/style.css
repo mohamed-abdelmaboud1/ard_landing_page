@@ -721,10 +721,11 @@ section {
 }
 
 /* ============================================================
-   PROMISE
+   PROMISE — Trust Pillars
    ============================================================ */
 .promise-section {
   background: var(--warm-white);
+  padding: var(--section-py) var(--container-px);
 }
 
 .promise-grid {
@@ -734,30 +735,44 @@ section {
   max-width: var(--container-max);
   margin-inline: auto;
 }
+
 .promise-item {
   text-align: center;
   padding: 44px 28px;
   background: var(--papyrus);
   border-radius: var(--radius-xl);
   border: 1px solid rgba(201, 164, 92, 0.18);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
   transition:
     transform 0.4s var(--ease),
-    box-shadow 0.4s;
+    box-shadow 0.4s var(--ease),
+    border-color 0.4s;
 }
+
 .promise-item:hover {
   transform: translateY(-8px);
-  box-shadow: var(--shadow-card);
+  border-color: rgba(201, 164, 92, 0.45);
+  box-shadow: 0 16px 36px rgba(201, 164, 92, 0.15);
 }
+
 .promise-icon {
   font-size: 40px;
   margin-bottom: 20px;
+  display: inline-block;
+  transition: transform 0.3s var(--ease);
 }
+.promise-item:hover .promise-icon {
+  transform: scale(1.12);
+}
+
 .promise-item h3 {
   font-family: var(--font-body);
-  font-size: 1.05rem;
+  font-size: 1.08rem;
   font-weight: 700;
   margin-bottom: 10px;
+  color: var(--text-primary);
 }
+
 .promise-item p {
   font-size: 0.92rem;
   color: var(--text-secondary);
@@ -802,10 +817,22 @@ section {
 }
 
 /* Row 3: Items 5, 6, 7, 8 */
-.gallery-grid .g-item:nth-child(5) { grid-column: 1; grid-row: 3; }
-.gallery-grid .g-item:nth-child(6) { grid-column: 2; grid-row: 3; }
-.gallery-grid .g-item:nth-child(7) { grid-column: 3; grid-row: 3; }
-.gallery-grid .g-item:nth-child(8) { grid-column: 4; grid-row: 3; }
+.gallery-grid .g-item:nth-child(5) {
+  grid-column: 1;
+  grid-row: 3;
+}
+.gallery-grid .g-item:nth-child(6) {
+  grid-column: 2;
+  grid-row: 3;
+}
+.gallery-grid .g-item:nth-child(7) {
+  grid-column: 3;
+  grid-row: 3;
+}
+.gallery-grid .g-item:nth-child(8) {
+  grid-column: 4;
+  grid-row: 3;
+}
 
 /* Item 9 (Row 4, Left side wide) */
 .gallery-grid .g-item--wide-9 {
@@ -815,8 +842,14 @@ section {
 }
 
 /* Items 10 & 11 (Row 5, Left side single cols) */
-.gallery-grid .g-item:nth-child(10) { grid-column: 1; grid-row: 5; }
-.gallery-grid .g-item:nth-child(11) { grid-column: 2; grid-row: 5; }
+.gallery-grid .g-item:nth-child(10) {
+  grid-column: 1;
+  grid-row: 5;
+}
+.gallery-grid .g-item:nth-child(11) {
+  grid-column: 2;
+  grid-row: 5;
+}
 
 /* Feature 12 (Bottom-Right 2x2) */
 .gallery-grid .g-item--feature-12 {
@@ -1428,15 +1461,24 @@ footer {
     width: calc(100% - 28px);
     top: 12px;
     padding: 10px 16px;
-    border-radius: 999px;
+    border-radius: 24px;
+    transition:
+      background 0.35s var(--ease),
+      box-shadow 0.35s var(--ease),
+      border-color 0.35s;
   }
   .glass-navbar.scrolled {
-    border-radius: 999px;
+    border-radius: 24px;
   }
   .glass-navbar.menu-open {
-    border-radius: 26px;
-    background: rgba(255, 255, 255, 0.94);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.16);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(28px) saturate(180%);
+    -webkit-backdrop-filter: blur(28px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    box-shadow:
+      0 16px 40px rgba(0, 0, 0, 0.16),
+      inset 0 1px 0 rgba(255, 255, 255, 0.75);
   }
   .nav-links {
     display: none;
@@ -1445,8 +1487,43 @@ footer {
     display: flex;
   }
   .nav-mobile {
-    border-radius: 0 0 20px 20px;
-    margin-top: 0;
+    padding: 10px 6px 14px;
+    margin-top: 6px;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    background: transparent;
+  }
+  .nav-mobile a {
+    color: #171717;
+    font-size: 0.98rem;
+    font-weight: 600;
+    padding: 12px 14px;
+    border-radius: 14px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    transition: all 0.25s var(--ease);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-mobile a:hover {
+    color: var(--gold-dark);
+    background: rgba(255, 255, 255, 0.35);
+    padding-left: 18px;
+  }
+  .nav-mobile a:last-child {
+    border-bottom: none;
+    margin-top: 8px;
+    background: var(--gold-dark);
+    color: #ffffff !important;
+    text-align: center;
+    justify-content: center;
+    border-radius: 999px;
+    padding: 12px 20px;
+    box-shadow: 0 4px 14px rgba(173, 133, 64, 0.35);
+  }
+  .nav-mobile a:last-child:hover {
+    background: var(--gold);
+    color: #ffffff !important;
+    padding-left: 20px;
   }
   .hero-logo {
     width: 200px;
