@@ -335,6 +335,38 @@ if (testimonials.length > 0) {
       line2El.appendChild(cursor);
       charIndex2++;
       setTimeout(typeLine2, 34);
+    } else {
+      // Completed typing both lines: hold for 3500ms duration, then repeat
+      setTimeout(eraseLine2, 3500);
+    }
+  }
+
+  function eraseLine2() {
+    if (charIndex2 > 0) {
+      cursor.remove();
+      charIndex2--;
+      line2El.textContent = text2.substring(0, charIndex2);
+      line2El.appendChild(cursor);
+      setTimeout(eraseLine2, 12);
+    } else {
+      cursor.remove();
+      line1El.appendChild(cursor);
+      setTimeout(eraseLine1, 140);
+    }
+  }
+
+  function eraseLine1() {
+    if (charIndex1 > 0) {
+      cursor.remove();
+      charIndex1--;
+      line1El.textContent = text1.substring(0, charIndex1);
+      line1El.appendChild(cursor);
+      setTimeout(eraseLine1, 12);
+    } else {
+      // Pause briefly at empty before restarting next typing cycle
+      setTimeout(() => {
+        typeLine1();
+      }, 400);
     }
   }
 
