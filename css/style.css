@@ -557,12 +557,93 @@ section {
   }
 }
 
-.hero-content h1 {
+.hero-content h1,
+.hero-title {
   color: #fff;
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5.2vw, 4.2rem);
+  line-height: 1.15;
   margin-bottom: 24px;
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.35);
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
   opacity: 0;
   animation: heroFadeUp 0.9s var(--ease) 0.5s forwards;
+}
+
+.hero-prefix {
+  display: inline-block;
+  margin-right: 0.12em;
+  color: #ffffff;
+}
+
+.hero-rotator {
+  display: inline-block;
+  height: 1.18em;
+  line-height: 1.18em;
+  overflow: hidden;
+  vertical-align: bottom;
+  position: relative;
+}
+
+.rotator-track {
+  display: block;
+  animation: ardWordRoll 12s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+.rotator-word {
+  display: block;
+  height: 1.18em;
+  line-height: 1.18em;
+  font-style: italic;
+  background: linear-gradient(
+    110deg,
+    var(--gold-light) 0%,
+    #ffffff 25%,
+    var(--gold) 55%,
+    #fffdf0 75%,
+    var(--gold-light) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 14px rgba(201, 164, 92, 0.4));
+  padding-right: 0.08em;
+}
+
+.hero-subline {
+  display: inline-block;
+  color: #ffffff;
+}
+
+/* Seamless forward-rolling 5-word ticker (2.4s per word) */
+@keyframes ardWordRoll {
+  0%, 18% {
+    transform: translateY(0);
+  }
+  22%, 38% {
+    transform: translateY(-20%);
+  }
+  42%, 58% {
+    transform: translateY(-40%);
+  }
+  62%, 78% {
+    transform: translateY(-60%);
+  }
+  82%, 98% {
+    transform: translateY(-80%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rotator-track {
+    animation: none;
+  }
+  .rotator-word:not(:nth-child(1)) {
+    display: none;
+  }
 }
 .hero-content .hero-sub {
   font-size: clamp(1rem, 2vw, 1.2rem);
@@ -1542,6 +1623,11 @@ footer {
   .eyebrow-shimmer {
     font-size: 1rem;
     letter-spacing: 0.22em;
+  }
+  .hero-title {
+    font-size: clamp(2.1rem, 7vw, 2.9rem);
+    line-height: 1.2;
+    margin-bottom: 20px;
   }
   .hero-content {
     padding-top: 140px;
