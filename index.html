@@ -294,26 +294,113 @@
       <div class="gold-divider"></div>
     </div>
 
-    <div class="services-grid">
-      <div class="service-card reveal">
-        <span class="service-icon">🏕️</span>
-        <h3>Unique Stays</h3>
-        <p>Architectural wonders and heritage homes that offer more than just a place to sleep.</p>
+    <!-- What We Offer: Interactive Stacked Cards Deck -->
+    <div class="offer-stack-wrapper reveal" id="offerStackWrapper">
+      <div class="offer-stack" id="offerStack" aria-label="What We Offer — Interactive Experience Cards">
+        
+        <!-- Card 1: Unique Stays -->
+        <article class="offer-card" data-pos="0" data-index="0" role="group" aria-label="1 of 4: Unique Stays">
+          <div class="offer-thumb">
+            <img src="./images/accomodtion2.jpg" alt="Unique Egyptian Stays and Heritage Homes" loading="lazy">
+            <span class="offer-badge">Unique Stays</span>
+          </div>
+          <div class="offer-content">
+            <span class="offer-eyebrow">01 / Heritage Living</span>
+            <h3 class="offer-title">
+              <a href="#download">Unique Stays &amp; Sanctuaries <span class="offer-arrow" aria-hidden="true">→</span></a>
+            </h3>
+            <p class="offer-desc">
+              Architectural wonders, desert eco-lodges, and handpicked heritage homes that offer far more than just a place to sleep.
+            </p>
+          </div>
+          <button class="offer-close" aria-label="Dismiss and show next offering" title="Next Card">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </article>
+
+        <!-- Card 2: Journey Planner -->
+        <article class="offer-card" data-pos="1" data-index="1" role="group" aria-label="2 of 4: Journey Planner">
+          <div class="offer-thumb">
+            <img src="./images/trips2.jpeg" alt="Tailor-made Egyptian Journeys and Trips" loading="lazy">
+            <span class="offer-badge">Journey Planner</span>
+          </div>
+          <div class="offer-content">
+            <span class="offer-eyebrow">02 / Tailored Itineraries</span>
+            <h3 class="offer-title">
+              <a href="#download">Custom Egyptian Journeys <span class="offer-arrow" aria-hidden="true">→</span></a>
+            </h3>
+            <p class="offer-desc">
+              Bespoke travel routes designed by local historians to match your personal pace, cultural curiosity, and travel style.
+            </p>
+          </div>
+          <button class="offer-close" aria-label="Dismiss and show next offering" title="Next Card">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </article>
+
+        <!-- Card 3: Local Adventures -->
+        <article class="offer-card" data-pos="2" data-index="2" role="group" aria-label="3 of 4: Local Adventures">
+          <div class="offer-thumb">
+            <img src="./images/activity2.jpeg" alt="Authentic Local Adventures and Activities in Egypt" loading="lazy">
+            <span class="offer-badge">Adventures</span>
+          </div>
+          <div class="offer-content">
+            <span class="offer-eyebrow">03 / Raw Exploration</span>
+            <h3 class="offer-title">
+              <a href="#download">Off-Grid Local Adventures <span class="offer-arrow" aria-hidden="true">→</span></a>
+            </h3>
+            <p class="offer-desc">
+              Step off the beaten path with immersive encounters, desert trails, and authentic experiences led by people who know the land best.
+            </p>
+          </div>
+          <button class="offer-close" aria-label="Dismiss and show next offering" title="Next Card">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </article>
+
+        <!-- Card 4: Golden Hands -->
+        <article class="offer-card" data-pos="hidden" data-index="3" role="group" aria-label="4 of 4: Golden Hands">
+          <div class="offer-thumb">
+            <img src="./images/crafts.jpg" alt="Golden Hands Master Artisans and Crafts" loading="lazy">
+            <span class="offer-badge">Craftsmanship</span>
+          </div>
+          <div class="offer-content">
+            <span class="offer-eyebrow">04 / Master Artisans</span>
+            <h3 class="offer-title">
+              <a href="#download">Golden Hands &amp; Crafts <span class="offer-arrow" aria-hidden="true">→</span></a>
+            </h3>
+            <p class="offer-desc">
+              Exclusive direct access to master Egyptian craftspeople, stone carvers, and heritage workshops preserving timeless traditions.
+            </p>
+          </div>
+          <button class="offer-close" aria-label="Dismiss and show next offering" title="Next Card">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </article>
+
       </div>
-      <div class="service-card reveal">
-        <span class="service-icon">🧭</span>
-        <h3>Journey Planner</h3>
-        <p>Tailor-made itineraries designed by local experts to match your personal pace and interests.</p>
-      </div>
-      <div class="service-card reveal">
-        <span class="service-icon">⚡</span>
-        <h3>Local Adventures</h3>
-        <p>Step off the beaten path with immersive activities led by the people who know the land best.</p>
-      </div>
-      <div class="service-card reveal">
-        <span class="service-icon">🪔</span>
-        <h3>Golden Hands</h3>
-        <p>Exclusive access to master artisans and their timeless traditions — a tribute to local craftsmanship.</p>
+
+      <!-- Interactive Controls: Progress Indicator Dots & Hint -->
+      <div class="offer-stack-controls">
+        <div class="offer-dots" id="offerDots" aria-label="Card pagination">
+          <button class="offer-dot active" aria-label="Go to card 1"></button>
+          <button class="offer-dot" aria-label="Go to card 2"></button>
+          <button class="offer-dot" aria-label="Go to card 3"></button>
+          <button class="offer-dot" aria-label="Go to card 4"></button>
+        </div>
+        <span class="offer-timer-hint">Auto-advances • Tap card or [×] to next</span>
       </div>
     </div>
   </div>
