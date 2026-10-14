@@ -52,22 +52,29 @@
 
   <div class="hero-content">
     <img src="./images/logo.png" alt="The ARD" class="hero-logo">
-    <span class="eyebrow eyebrow-shimmer"> </span>
+    <span class="eyebrow eyebrow-shimmer">Discover Egypt</span>
     <h1>Travel with Purpose.<br>Discover the Unseen.</h1>
     <p class="hero-sub">
       Connecting you with authentic local experiences and handpicked destinations that stay with you forever.
     </p>
     <div class="hero-ctas">
-      <a href="https://apps.apple.com/us/app/the-ard/id6743180887" class="btn btn-store" id="heroAppStore" target="_blank" rel="noopener">
-        <img src="./images/app-store.svg" alt="App Store" class="btn-store-icon">
-        <span>Download on App Store</span>
+      <a href="https://apps.apple.com/us/app/the-ard/id6743180887" class="btn-hero-store" id="heroAppStore" target="_blank" rel="noopener">
+        <img src="./images/app-store.svg" alt="App Store" class="btn-hero-store-icon">
+        <span class="btn-hero-store-text">
+          <small>Download on</small>
+          <strong>App Store</strong>
+        </span>
       </a>
-      <a href="https://play.google.com/store/apps/details?id=com.thearda" class="btn btn-store" id="heroPlayStore" target="_blank" rel="noopener">
-        <img src="./images/google-play.svg" alt="Google Play" class="btn-store-icon">
-        <span>Get it on Google Play</span>
+      <a href="https://play.google.com/store/apps/details?id=com.thearda" class="btn-hero-store" id="heroPlayStore" target="_blank" rel="noopener">
+        <img src="./images/google-play.svg" alt="Google Play" class="btn-hero-store-icon">
+        <span class="btn-hero-store-text">
+          <small>Get it on</small>
+          <strong>Google Play</strong>
+        </span>
       </a>
-      <a href="#services" class="btn btn-outline-white" id="heroExplore">
-        Explore the Collection →
+      <a href="#services" class="btn-hero-explore" id="heroExplore">
+        <span>Explore Collection</span>
+        <svg class="btn-hero-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
     </div>
   </div>
@@ -127,8 +134,8 @@
     </div>
 
     <div class="gallery-grid">
-      <!-- 1 — large feature (span 2×2) -->
-      <div class="g-item reveal">
+      <!-- 1: Top-Left Hero Feature (Span 2x2) -->
+      <div class="g-item g-item--feature-1 reveal">
         <img src="./images/pexels-ahmedelbetar-4898083.jpg" alt="Beyond the Surface — Cultural depth of Egypt" loading="lazy">
         <div class="g-overlay">
           <div>
@@ -138,7 +145,7 @@
         </div>
       </div>
 
-      <!-- 2 -->
+      <!-- 2: Row 1, Col 3 -->
       <div class="g-item reveal">
         <img src="./images/pexels-ozgomz-7566888.jpg" alt="Living Traditions — Egyptian Heritage" loading="lazy">
         <div class="g-overlay">
@@ -149,7 +156,7 @@
         </div>
       </div>
 
-      <!-- 3 -->
+      <!-- 3: Row 1, Col 4 -->
       <div class="g-item reveal">
         <img src="./images/photo-1568322445389-f64ac2515020.jpg" alt="Great Egypt — Desert landscape" loading="lazy">
         <div class="g-overlay">
@@ -160,8 +167,8 @@
         </div>
       </div>
 
-      <!-- 4 — span 2 wide -->
-      <div class="g-item reveal">
+      <!-- 4: Row 2, Col 3-4 (Span 2 wide) -->
+      <div class="g-item g-item--wide-4 reveal">
         <img src="./images/photo-1539768942893-daf53e448371.jpg" alt="Desert Nights — Stars over the dunes" loading="lazy">
         <div class="g-overlay">
           <div>
@@ -171,7 +178,7 @@
         </div>
       </div>
 
-      <!-- 5 -->
+      <!-- 5: Row 3, Col 1 -->
       <div class="g-item reveal">
         <img src="./images/photo-1553913861-c0fddf2619ee.jpg" alt="Ancient Echoes — Pharaonic monuments" loading="lazy">
         <div class="g-overlay">
@@ -182,7 +189,7 @@
         </div>
       </div>
 
-      <!-- 6 -->
+      <!-- 6: Row 3, Col 2 -->
       <div class="g-item reveal">
         <img src="./images/photo-1572252009286-268acec5ca0a.jpg" alt="Nile Stories — Life along the river" loading="lazy">
         <div class="g-overlay">
@@ -193,7 +200,7 @@
         </div>
       </div>
 
-      <!-- 7 — span 2 wide -->
+      <!-- 7: Row 3, Col 3 -->
       <div class="g-item reveal">
         <img src="./images/pexels-tima-miroshnichenko-6010288.jpg" alt="Local Rhythm — Everyday Egyptian life" loading="lazy">
         <div class="g-overlay">
@@ -204,7 +211,7 @@
         </div>
       </div>
 
-      <!-- 8 -->
+      <!-- 8: Row 3, Col 4 -->
       <div class="g-item reveal">
         <img src="./images/pexels-tima-miroshnichenko-6010335.jpg" alt="Craft Masters — Golden hands artisans" loading="lazy">
         <div class="g-overlay">
@@ -215,8 +222,8 @@
         </div>
       </div>
 
-      <!-- 9 — span 2 wide -->
-      <div class="g-item reveal">
+      <!-- 9: Row 4, Col 1-2 (Span 2 wide) -->
+      <div class="g-item g-item--wide-9 reveal">
         <img src="./images/pexels-tima-miroshnichenko-6010288.jpg" alt="Sahara Horizon — Golden desert at dusk" loading="lazy">
         <div class="g-overlay">
           <div>
@@ -226,7 +233,7 @@
         </div>
       </div>
 
-      <!-- 10 -->
+      <!-- 10: Row 5, Col 1 -->
       <div class="g-item reveal">
         <img src="./images/pexels-ozgomz-7566888.jpg" alt="Market Life — Colors of Cairo" loading="lazy">
         <div class="g-overlay">
@@ -237,24 +244,24 @@
         </div>
       </div>
 
-      <!-- 11 -->
+      <!-- 11: Row 5, Col 2 -->
       <div class="g-item reveal">
-        <img src="./images/photo-1553913861-c0fddf2619ee.jpg" alt="Sacred Temples — Ancient wonders" loading="lazy">
+        <img src="./images/photo-1572252009286-268acec5ca0a.jpg" alt="Felucca at Twilight — Nile river sunset" loading="lazy">
         <div class="g-overlay">
           <div>
-            <span class="g-tag">Ancient</span>
-            <h3>Sacred Temples</h3>
+            <span class="g-tag">Sanctuary</span>
+            <h3>Felucca at Twilight</h3>
           </div>
         </div>
       </div>
 
-      <!-- 12 -->
-      <div class="g-item reveal">
-        <img src="./images/photo-1572252009286-268acec5ca0a.jpg" alt="Nile at Dawn — Morning river light" loading="lazy">
+      <!-- 12: Row 4-5, Col 3-4 (Span 2x2 Feature) -->
+      <div class="g-item g-item--feature-12 reveal">
+        <img src="./images/photo-1553913861-c0fddf2619ee.jpg" alt="Sacred Temples — Ancient wonders of Egypt" loading="lazy">
         <div class="g-overlay">
           <div>
-            <span class="g-tag">Nile</span>
-            <h3>Nile at Dawn</h3>
+            <span class="g-tag">Wonders</span>
+            <h3>Sacred Temples</h3>
           </div>
         </div>
       </div>

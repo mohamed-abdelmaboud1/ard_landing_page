@@ -17,8 +17,10 @@ const hamburger  = document.getElementById('navHamburger');
 const mobileMenu = document.getElementById('navMobile');
 
 hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('open');
-  mobileMenu.classList.toggle('open');
+  const isOpen = hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open', isOpen);
+  navbar.classList.toggle('menu-open', isOpen);
+  hamburger.setAttribute('aria-expanded', String(isOpen));
 });
 
 // Close on link click
@@ -26,6 +28,8 @@ mobileMenu.querySelectorAll('a').forEach(a => {
   a.addEventListener('click', () => {
     hamburger.classList.remove('open');
     mobileMenu.classList.remove('open');
+    navbar.classList.remove('menu-open');
+    hamburger.setAttribute('aria-expanded', 'false');
   });
 });
 
