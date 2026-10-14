@@ -284,6 +284,64 @@ if (testimonials.length > 0) {
   });
 })();
 
+/* -- Hero Typewriter Effect (Courier Prime) ------------- */
+(function initHeroTypewriter() {
+  const line1El = document.getElementById("typewriterLine1");
+  const line2El = document.getElementById("typewriterLine2");
+  if (!line1El || !line2El) return;
+
+  const text1 = line1El.textContent.trim();
+  const text2 = line2El.textContent.trim();
+
+  // If prefers-reduced-motion, leave static text
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return;
+  }
+
+  // Clear text for typing effect
+  line1El.textContent = "";
+  line2El.textContent = "";
+
+  const cursor = document.createElement("span");
+  cursor.className = "typewriter-cursor";
+  cursor.setAttribute("aria-hidden", "true");
+  cursor.textContent = "|";
+
+  line1El.appendChild(cursor);
+
+  let charIndex1 = 0;
+  let charIndex2 = 0;
+
+  function typeLine1() {
+    if (charIndex1 < text1.length) {
+      cursor.remove();
+      line1El.textContent += text1.charAt(charIndex1);
+      line1El.appendChild(cursor);
+      charIndex1++;
+      setTimeout(typeLine1, 38);
+    } else {
+      setTimeout(() => {
+        cursor.remove();
+        line2El.appendChild(cursor);
+        typeLine2();
+      }, 350);
+    }
+  }
+
+  function typeLine2() {
+    if (charIndex2 < text2.length) {
+      cursor.remove();
+      line2El.textContent += text2.charAt(charIndex2);
+      line2El.appendChild(cursor);
+      charIndex2++;
+      setTimeout(typeLine2, 34);
+    }
+  }
+
+  // Start typing after initial hero reveal
+  setTimeout(typeLine1, 750);
+})();
+
 /* -- Console branding ----------------------------------- */
 console.log(
   "%c The ARD ",

@@ -5,6 +5,8 @@
 
 /* -- Google Fonts ------------------------------------------ */
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=Cairo:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap");
+
 
 /* -- CSS Variables ----------------------------------------- */
 :root {
@@ -469,9 +471,9 @@ section {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url("https://images.unsplash.com/photo-1539768942893-daf53e448371?w=1800&auto=format&fit=crop&q=80");
+  background-image: url("../images/image4.jpeg");
   background-size: cover;
-  background-position: center 40%;
+  background-position: center 30%;
 }
 
 .hero-overlay {
@@ -489,7 +491,7 @@ section {
   position: relative;
   z-index: 10;
   max-width: 780px;
-  padding: 160px var(--container-px) 120px;
+  padding: 85px var(--container-px) 70px;
   margin-inline: auto;
   text-align: center;
   animation: heroFadeUp 1.2s var(--ease) forwards;
@@ -513,7 +515,7 @@ section {
 }
 
 .hero-logo {
-  width: 420px;
+  width: 500px;
   margin: 0 auto 16px;
   opacity: 0;
   animation: fadeIn 1s var(--ease) 0.2s forwards;
@@ -650,13 +652,62 @@ section {
     display: none;
   }
 }
+/* -- Hero Typewriter Effect (Courier Prime) ----------------- */
+.hero-typewriter {
+  margin: 0 auto 24px;
+  max-width: 680px;
+  font-family: "Courier Prime", "Courier New", Courier, monospace;
+  font-size: clamp(0.92rem, 1.8vw, 1.15rem);
+  line-height: 1.68;
+  color: var(--gold-light, #e4c278);
+  letter-spacing: 0.03em;
+  text-align: center;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7), 0 0 12px rgba(201, 164, 92, 0.35);
+  min-height: 3.4em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  animation: heroFadeUp 0.9s var(--ease) 0.65s forwards;
+}
+
+.typewriter-line {
+  margin: 0;
+  min-height: 1.65em;
+  display: inline-block;
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  color: var(--gold, #c9a45c);
+  font-weight: 700;
+  margin-left: 2px;
+  animation: twCursorBlink 0.8s step-start infinite;
+}
+
+@keyframes twCursorBlink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typewriter-cursor {
+    animation: none;
+    opacity: 0;
+  }
+}
+
 .hero-content .hero-sub {
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  color: rgba(255, 255, 255, 0.82);
-  margin-bottom: 48px;
-  line-height: 1.8;
-  max-width: 580px;
+  font-size: clamp(0.98rem, 1.8vw, 1.15rem);
+  color: rgba(255, 255, 255, 0.86);
+  margin-bottom: 44px;
+  line-height: 1.85;
+  max-width: 680px;
   margin-inline: auto;
+  text-align: justify;
+  text-justify: inter-word;
+  text-align-last: center;
   opacity: 0;
   animation: heroFadeUp 0.9s var(--ease) 0.75s forwards;
 }
@@ -2181,8 +2232,8 @@ footer {
     margin-bottom: 20px;
   }
   .hero-content {
-    padding-top: 140px;
-    padding-bottom: 100px;
+    padding-top: 75px;
+    padding-bottom: 70px;
   }
   .hero-ctas {
     flex-direction: column;
