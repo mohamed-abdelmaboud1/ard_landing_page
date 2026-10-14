@@ -1,4 +1,5 @@
 # Style Guide: "Your workshop" Hero Section
+
 Source: https://getyourguide.supply/ (Supplier landing page)
 
 > **Confidence note for the agent:** The structure, copy, and behavior below were read directly from the page content. Exact visual values (hex colors, font names, pixel sizes) were NOT visible in the fetched content. Items marked `[VERIFY]` are reasonable assumptions and must be checked against the live site's CSS (browser DevTools) before being treated as final.
@@ -7,7 +8,7 @@ Source: https://getyourguide.supply/ (Supplier landing page)
 
 ## 1. Purpose of the section
 
-Hero that introduces the supplier program. It speaks directly to the supplier ("Your ...") and makes the offer feel personal to *their* kind of business by cycling the last word of a headline through their product types.
+Hero that introduces the supplier program. It speaks directly to the supplier ("Your ...") and makes the offer feel personal to _their_ kind of business by cycling the last word of a headline through their product types.
 
 ## 2. Content structure (top to bottom)
 
@@ -27,7 +28,7 @@ Hero that introduces the supplier program. It speaks directly to the supplier ("
 
 - Fixed word: **"Your"**
 - Rotating word list (in order): `workshop` -> `tour` -> `experience` -> `activity`
-- Each word is paired with a matching image (alt text: `Workshop`, `Tour`, *(blank)*, `Activity`). When the word changes, the image changes with it.
+- Each word is paired with a matching image (alt text: `Workshop`, `Tour`, _(blank)_, `Activity`). When the word changes, the image changes with it.
 - Implementation intent:
   - "Your" stays static; only the second word animates (vertical slide/fade, roll-style ticker). `[VERIFY animation type]`
   - Words are lowercase.
@@ -40,7 +41,7 @@ Hero that introduces the supplier program. It speaks directly to the supplier ("
 
 - Direct, second person ("Your", "you").
 - Short, confident, benefit-first sentences.
-- Outcome words: *visibility, bookings, revenue, reach, grow, scale*.
+- Outcome words: _visibility, bookings, revenue, reach, grow, scale_.
 - No jargon. Friendly but professional.
 - Pattern: **[Action]. [Outcome].** (e.g., "Reach millions of travelers. Grow your business.")
 
@@ -53,16 +54,16 @@ Hero that introduces the supplier program. It speaks directly to the supplier ("
 
 ## 6. Visual tokens (assumptions, verify)
 
-| Token | Suggested value | Status |
-|---|---|---|
-| Brand accent (CTA, rotating word) | GetYourGuide orange-red, approx `#FF5533` | `[VERIFY]` |
-| Text on light | Near-black / deep navy, approx `#1A2B49` | `[VERIFY]` |
-| Background | White / very light gray | `[VERIFY]` |
-| Headline font | Bold geometric/humanist sans-serif | `[VERIFY]` |
-| H1 size | `clamp(2.25rem, 5vw, 4rem)` | assumption |
-| Rotator word size | Same as or larger than H1 | assumption |
-| Button | Filled, rounded (pill or ~8-12px radius), bold label | `[VERIFY]` |
-| Imagery | Real photography of guides, workshops, tours, travelers; warm, candid, high-quality `.webp` | observed (webp) |
+| Token                             | Suggested value                                                                             | Status          |
+| --------------------------------- | ------------------------------------------------------------------------------------------- | --------------- |
+| Brand accent (CTA, rotating word) | GetYourGuide orange-red, approx `#FF5533`                                                   | `[VERIFY]`      |
+| Text on light                     | Near-black / deep navy, approx `#1A2B49`                                                    | `[VERIFY]`      |
+| Background                        | White / very light gray                                                                     | `[VERIFY]`      |
+| Headline font                     | Bold geometric/humanist sans-serif                                                          | `[VERIFY]`      |
+| H1 size                           | `clamp(2.25rem, 5vw, 4rem)`                                                                 | assumption      |
+| Rotator word size                 | Same as or larger than H1                                                                   | assumption      |
+| Button                            | Filled, rounded (pill or ~8-12px radius), bold label                                        | `[VERIFY]`      |
+| Imagery                           | Real photography of guides, workshops, tours, travelers; warm, candid, high-quality `.webp` | observed (webp) |
 
 ## 7. Component spec: CTA button
 
@@ -77,11 +78,12 @@ Hero that introduces the supplier program. It speaks directly to the supplier ("
 - **Feature cards** with image on top, bold title, one-line description.
 - **3-step process** numbered `01.`, `02.`, `03.`.
 - **FAQ accordion.**
-- Consistent pattern: *small eyebrow -> big heading -> short supporting text -> visual*.
+- Consistent pattern: _small eyebrow -> big heading -> short supporting text -> visual_.
 
 ## 9. Do / Don't for the agent
 
 **Do**
+
 - Keep headlines to two short sentences.
 - Address the reader as "you/your".
 - Pair every rotating word with a relevant image.
@@ -89,6 +91,7 @@ Hero that introduces the supplier program. It speaks directly to the supplier ("
 - Keep copy benefit-led and plain.
 
 **Don't**
+
 - Add more than four rotating words.
 - Use long paragraphs in the hero.
 - Use stock clip-art; use real experience photography.
@@ -100,22 +103,69 @@ Hero that introduces the supplier program. It speaks directly to the supplier ("
 <section class="hero">
   <p class="eyebrow">Partner with GetYourGuide</p>
   <h1>Reach millions of travelers. Grow your business.</h1>
-  <p class="sub">Tap into global demand that drives more visibility, more bookings and more revenue.</p>
+  <p class="sub">
+    Tap into global demand that drives more visibility, more bookings and more
+    revenue.
+  </p>
   <a class="btn" href="/register/">Become a supplier</a>
 
-  <div class="rotator" aria-label="Your workshop, tour, experience, or activity">
+  <div
+    class="rotator"
+    aria-label="Your workshop, tour, experience, or activity"
+  >
     <span class="fixed">Your</span>
     <span class="words" aria-hidden="true">
-      <span>workshop</span><span>tour</span><span>experience</span><span>activity</span>
+      <span>workshop</span><span>tour</span><span>experience</span
+      ><span>activity</span>
     </span>
   </div>
 </section>
 ```
 
 ```css
-.rotator { font-size: clamp(2rem, 6vw, 4.5rem); font-weight: 700; line-height: 1.1; }
-.words { display: inline-block; height: 1.1em; overflow: hidden; vertical-align: bottom; color: var(--brand, #FF5533); }
-.words span { display: block; animation: roll 10s infinite; }
-@keyframes roll { 0%,20% { transform: translateY(0) } 25%,45% { transform: translateY(-100%) } 50%,70% { transform: translateY(-200%) } 75%,95% { transform: translateY(-300%) } 100% { transform: translateY(0) } }
-@media (prefers-reduced-motion: reduce) { .words span { animation: none } .words span:not(:nth-child(3)) { display: none } }
+.rotator {
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+.words {
+  display: inline-block;
+  height: 1.1em;
+  overflow: hidden;
+  vertical-align: bottom;
+  color: var(--brand, #ff5533);
+}
+.words span {
+  display: block;
+  animation: roll 10s infinite;
+}
+@keyframes roll {
+  0%,
+  20% {
+    transform: translateY(0);
+  }
+  25%,
+  45% {
+    transform: translateY(-100%);
+  }
+  50%,
+  70% {
+    transform: translateY(-200%);
+  }
+  75%,
+  95% {
+    transform: translateY(-300%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .words span {
+    animation: none;
+  }
+  .words span:not(:nth-child(3)) {
+    display: none;
+  }
+}
 ```
