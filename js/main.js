@@ -245,6 +245,45 @@ if (testimonials.length > 0) {
   startAutoAdvance();
 })();
 
+/* -- 3D Ticket Interactive Mouse Tilt Engine -------------- */
+(function initTicket3DTilt() {
+  const wrappers = document.querySelectorAll(".ticket-wrapper");
+  if (!wrappers.length || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  wrappers.forEach((wrapper) => {
+    const card = wrapper.querySelector(".ticket");
+    if (!card) return;
+
+    let rafId = null;
+
+    wrapper.addEventListener("mousemove", (e) => {
+      const rect = wrapper.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      // Realistic tactile 3D tilt (-6deg to +6deg)
+      const rotateX = -((y - centerY) / centerY) * 6;
+      const rotateY = ((x - centerX) / centerX) * 6;
+
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        card.style.transform = `perspective(1200px) translateY(-6px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateZ(10px)`;
+      });
+    });
+
+    wrapper.addEventListener("mouseleave", () => {
+      if (rafId) cancelAnimationFrame(rafId);
+      card.style.transition = "transform 0.45s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.35s ease, border-color 0.35s ease";
+      card.style.transform = "";
+      setTimeout(() => {
+        card.style.transition = "";
+      }, 450);
+    });
+  });
+})();
+
 /* -- Console branding ----------------------------------- */
 console.log(
   "%c The ARD ",
